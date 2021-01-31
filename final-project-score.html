@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.navbar{
+			background-color:black;
+			padding:13px 13px;
+			position:fixed;
+			width:100%;
+			top:0px;
+			left:0px;
+		}
+		.navbar a{
+			text-decoration:none;
+			position:relative;
+			color:white;
+			font-size:15px;
+			padding:12px 13px;
+		}
+		.navbar a:hover{
+			background-color:red;
+		}
+        .navbar .search-container{
+        	float:right;
+        }
+        .search-container input[type=text]{
+        	padding:2px;
+        	margin-top:1px;
+        	font-size:16px;
+        	border:none;
+        }
+        .search-container button{
+        	float:right;
+        	padding:6px 13px;
+        	margin-top:1px;
+        	margin-right:10px;
+        	margin-left:2px;
+        	background:white;
+        	font-size:10px;
+        	border:none;
+        }
+        .search-container button:hover{
+        	background-color:yellow;
+        }
+        .img_score{
+        	
+        	margin-top:7px;
+        	border:solid;
+        	border-color:black;
+        }
+        .information{
+        	margin-left:50px;
+        	font-size:25px;
+        	color:grey;
+        	font-family:Arial;
+        }
+        .footer{
+        	background-image:url("footer.png");
+        	float:left;
+        	background-repeat:no-repeat;
+        	position:relative;
+        	width:1330px;
+        	height:210px;
+        	border-color:black;
+        	border-style:solid;
+        	margin-top:120px;
+        }
+        .profile{
+        	border-radius:50%;
+        	margin-top:2px;
+        	margin-left:20px;     
+          }
+        .contact{
+        	float:right;
+        	margin-right:1000px;
+        }
+        .logo{
+        	margin-top:7px;
+        	margin-left:630px;
+        }
+   
+	</style>
+	<title>Score Prediction</title>
+</head>
+<body>
+	<center>
+	<h1 style="color:black;margin-top:60px;"><u>Score Prediction Model</u></h1>
+</center>
+	<div class="navbar">
+		<a href="final-project-homepage1.html">Home</a>
+		<a href="final-project-score.html">Score Prediction Model</a>
+		<a href="final-project-ratings.html">Match Prediction Model</a>
+		<a href="final-project-winloss.html">Win-loss chances Prediction Model</a>
+		<a href="final-project-projectdata.html">Get Project data</a>
+	<div class="search-container">
+		<form name="form1" action="fianl-project-search.php">
+			<input type="text" placeholder="search.." name="search1">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+</div>
+<center>
+	<img class="img_score" src="score.jpg" alt="score" width="700" height="400">
+</div>
+<h3 style="font-size:35px;color:red;"><b>Project Information:</b></h3></center>
+<div class="information">
+	<p>In this section we will explain the steps that were followed for developing this project</p>
+	<p><ol type="1">
+		<li style="color:orange;"><u>Preparing the dataset:</u></li>
+		<p>The dataset used in this model comprise of following columns:<br>
+			<ul>
+				<li>mid : Unique index for each match</li>
+				<li>date : date on which match is played</li>
+				<li>bat_team : name of batting team</li>
+				<li>bowl_team : name of bowling team</li>
+				<li>batsman : batsman name</li>
+				<li>Wickets : number of wickets taken till now</li>
+				<li>bowler : bowler name</li>
+				<li>Runs : The number of runs scored till now in the match</li>
+				<li>Overs : The number of overs bowled till now in the match</li>
+				<li>Striker : The runs scored by the striker till now</li>
+				<li>Non-Sriker : The runs scored by the non-striker till now</li>
+			</ul>
+			<img class="img_score" src="table.png" alt="table" width="600" height="300"></p>
+			<p><li style="color:orange;"><u>Preprocessing the data:</u></li><br>
+				We are now selecting the columns that will be given as input to our model<br>
+				The input columns are:<br>
+				<ul>
+					<li>Runs</li>
+					<li>Overs</li>
+					<li>Wickets</li>
+					<li>Striker</li>
+					<li>Non-Striker</li>
+				<br></ul>
+				The Output column is:
+				<ul><li>Total</li>
+			</ul>
+			<img class="img_score" src="preprocessing.png" alt="table" width="750" height="300"></p>
+				
+			<p><li style="color:orange;"><u>Spliting the data into training and testing parts:</u></li><br>
+				In this step we split the data using <b>train_test_split</b> function in sci-kit learn library of python,the training data will be 80% of the whole dataset and testing data will be 20% of whole dataset<br>
+				<img class="img_score" src="spliting.png" alt="table" width="750" height="300"></p>
+			</p>
+			<p><li style="color:orange;"><u>Normalizing the data:</u></li><br>
+				In this step we normalize the data using <b>StandardScaler</b> function in sci-kit learn library of python<br>
+				<img class="img_score" src="normalizing.png" alt="table" width="750" height="300"></p>
+			</p>
+			<p><li style="color:orange;"><u>Training the data:</u></li><br>
+				In this step we will use <b>Random forest algorithm</b> to make the prediction<br>
+				<img class="img_score" src="training.png" alt="table" width="750" height="300"></p>
+			</p>
+			<p><li style="color:orange;"><u>Calculating the accuracy:</u></li><br>
+				In this step we will calcualte the accuracy of our model by defining a function for calculation and later calling it<br>
+				<img class="img_score" src="accuracy1.png" alt="table" width="750" height="300">
+				<img class="img_score" src="accuracy2.png" alt="table" width="750" height="300"></p>
+			</p>
+			<p><li style="color:orange;"><u>Testing the model:</u></li><br>
+				In this step we will provide our model a sample input and get the predicted score<br>
+				<img class="img_score" src="prediction.png" alt="table" width="750" height="300">
+			</p>
+			<p><li style="color:orange;"><u>Calculating the R square value of the model:</u></li><br>
+				In this step we will calculate the R square value of the model<br>
+				<img class="img_score" src="rsquare.png" alt="table" width="750" height="300">
+			</p><p><li style="color:orange;"><u>Using the interface:</u></li><br>
+				For easy acess to users,we have created a GUI interface using flask which can take the input data and give the output <br>
+				<br>
+				<ul>
+					<li><u>Input the data</u></li><br>
+				<img class="img_score" src="webapp input.png" alt="table" width="550" height="380"><br><br>
+				<li><u>Get the Output</u></li><br>
+				<img class="img_score" src="webapp output.png" alt="table" width="550" height="380">
+			</ul>
+			</p>
+			<p><li style="color:orange;"><u>Testing the model:</u></li><br>
+		           Now we test our model by giving it details about the match predicting the target<br>
+		           <br>We later compare the acutal score and predicted score<br>
+				<br>
+				<ul>
+					<li><u>Predicting the target:</u></li><br>
+				<img class="img_score" src="webapp input.png" alt="table" width="550" height="380">
+				<img class="img_score" src="webapp output.png" alt="table" width="550" height="380"><br><br>
+				<li><u>Actual score:</u></li><br>
+				<img class="img_score" src="webapp result.png" alt="table" width="530" height="370">
+			</ul>
+			</p>
+	</ol>
+</div>
+<div class="footer">
+	<center>
+	<p style="font-size:17px; color:yellow;font-family:Arial;"><b>A website by Pranjal Shukla,Nandkishor Patil</b></p>
+	<img class="profile" src="profile.jpg" alt="profile" width="100" height="100">
+	<img class="profile" src="profile1.jpg" alt="profile" width="100" height="100"><br></center>
+	<a href="https://github.com/pranjalshukla23/Cricket-Prediction"><img  class="logo" src="github.png" alt="github" width="50" height="30">
+	</a>
+	<a href="https://www.linkedin.com/in/pranjal-shukla-097679156/"><img  src="linkedin.png" alt="github" width="50" height="30">
+	</a>
+</div>
+</body>
+</html>

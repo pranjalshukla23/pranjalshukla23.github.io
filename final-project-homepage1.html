@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <head>
+ 	<style>
+ 		.slideshow-container{
+			margin-left:250px;
+			margin-right:250px;
+			margin-top:20px;
+
+		}
+		.caption{
+			position:relative;
+			margin-top:-280px;
+			left:70px;
+			font-size:65px;
+			font-family:arial;
+		}
+		.prev,.next{
+			cursor:pointer;
+			position:relative;
+			top:-60px;
+			width:auto;
+			padding:16px;
+			color:red;
+			font-weight:bold;
+			font-size:50px;
+			transition:0.9s
+		}
+		.next{
+			left:730px;
+		}
+		.prev:hover,.next:hover{
+		
+			background-color:black;
+		}
+		.dots{
+			text-align:center;
+			margin-left:-70px;
+			margin-top:170px;
+			margin-bottom:70px;
+		}
+		.dot{
+			cursor:pointer;
+			height:15px;
+			width:15px;
+			background-color:grey;
+			border-radius:50%;
+			display:inline-block;
+			transition:background-color 0.2s ease;
+		}
+		.active{
+			background-color:black;
+		}
+
+ 	.image-left{
+ 	
+ 		width:41%;
+ 		margin-top:20px;
+ 		float:left;
+ 		margin-left:40px;
+ 	}
+ 	.text-right{
+ 		width:50%;
+ 		float:right;
+ 		margin-right:40px;
+ 		position:relative;
+ 		margin-top:10px;
+ 	}
+ 	 .img1{
+ 		 transition: transform .2s;
+ 	}
+ 	 .img1:hover{
+ 		transform:scale(1.1);
+ 		cursor:pointer;
+ 	}
+ 	.btn{
+ 		font-size:20px;
+ 		background-color:black;
+ 		color:white;
+ 		border:none;
+ 		padding:10px;
+ 		transition:transform .2s;
+ 	}
+ 	.btn:hover{
+ 		transform:scale(1.1);
+ 		background-color:red;
+ 	}
+ 	.image-right{
+ 		border=1;
+ 		border-style:solid;
+ 		border-color:white;
+ 		width:37%;
+ 		float:right;
+ 		margin-top:180px;
+ 		margin-right:80px;
+ 	}
+ 	.text-left{
+ 		width:50%;
+ 		border-style:solid;
+ 		border-color:white;
+ 		position:relative;
+ 		float:left;
+ 		margin-top:80px;
+ 		margin-left:40px;
+ 		
+ 	}
+ 	.image-left1{
+ 		width:41%;
+ 		margin-top:200px;
+ 		float:left;
+ 		margin-left:40px;
+ 		border=1;
+ 		border-style:solid;
+ 		border-color:white;
+ 		height:335px;
+ 		padding:15px 10px 10px 25px;
+ 		
+
+ 	}
+ 	.text-right1{
+ 		width:50%;
+ 		float:right;
+ 		margin-right:10px;
+ 		position:relative;
+ 		margin-top:100px;
+ 	}
+ 	a{
+ 		text-decoration:none;
+ 	}
+ 	
+ 	.navbar{
+ 		background-color:white;
+ 		overflow:hidden;
+ 		padding:10px;
+ 		border-color:black;
+ 		border:1;
+ 		border-style:solid;
+ 		width:100%;
+ 		top:0;
+ 	}
+ 	.navbar .openbtn{
+ 		color:blue;
+ 		cursor:pointer;
+ 		border:none;
+ 		background-color:white;
+ 		font-size:30px;
+ 		cursor:pointer;
+ 		transition:2s;
+ 	}
+ 	.navbar .openbtn:hover{
+ 		transform:scale(1.5);
+ 	}
+ 	.menu{
+ 		width:0px;
+ 		height:60%;
+ 		position:fixed;
+ 		z-index:1;
+ 		top:25px;
+ 		left:3px;
+ 		background-color:white;
+ 		overflow:hidden;
+ 		transition:0.5s;
+ 		padding-top:40px;
+ 		margin-top:0px;
+ 		border-style:solid;
+ 		border-color:black;
+
+ 	}
+ 	.menu a{
+ 		color:black;
+ 		font-size:40px;
+ 		text-decoration:none;
+ 		display:block;
+ 		transition:0.7s;
+ 		padding-bottom:50px;
+ 		padding-left:400px;
+ 		font-weight:bold;
+ 		transition:0.2s;
+ 	}
+ 	.menu a:hover{
+ 		transform:scale(1.1);
+        color:red;
+ 	}
+ 	.menu .closebtn{
+ 		position:absolute;
+ 		top:0px;
+ 		right:10px;
+ 		font-size:36px;
+ 	}
+ 	.navbar .search-container{
+ 		float:right;
+ 	}
+ 	.navbar input{
+ 		padding:0px;
+ 		margin-top:8px;
+ 		font-size:17px;
+
+ 	}
+ 	.navbar .search-container button{
+ 		float:right;
+ 		padding:6px 10px;
+ 		margin-top:4px;
+ 		margin-right:16px;
+ 		background:none;
+ 		font-size:17px;
+ 		border:none;
+ 		cursor:pointer;
+ 		color:blue;
+ 	}
+ 	.mySlides img{
+ 		border-style:solid;
+ 		border-color:black;
+ 	}
+ 	</style>
+ 	<title>HomePage</title>
+ </head>
+ <body>
+ 	<center>
+ 	<h1 style="color:orange;font-size:40px;font-weight:bold;font-family:arial;">Machine learning models on cricket</h1>
+ </center>
+ 	<div class="menu" id="menu">
+ 		<a href="javascript:void(0)" onclick="closeNav()" class="closebtn">&times;</a>
+ 		<a href="final-project-score.html">Score prediction model</a>
+ 		<a href="final-project-winloss.html">Win/loss prediction model</a>
+ 		<a href="final-project-ratings.html">Match prediction model</a>
+ 		<a href="final-project-projectdata.html">Get project data</a>
+ 	</div>
+ 	<div class="navbar">
+ 		<button type="button" class="openbtn" onclick="openNav()">&#9776;</button>
+ 		<div class="search-container">
+ 			<form name="form" action="search.php">
+ 				<input type="text" placeholder="search..." name="search">
+ 				<button type="submit"><i class="fa fa-search"></i></button>
+ 			</form>
+ 		</div>
+ 	</div>
+ 	<div class="slideshow-container">
+		<div class="mySlides w3-animate-right">
+			<img src="score_image.jpg" alt="score" width="100%" height="500">
+			<div class="caption">Score prediction Model</div>
+		</div>
+		<div class="mySlides w3-animate-right">
+			<img src="players.jpg" alt="score" width="100%" height="500">
+			<div class="caption" style="color:orange;">Match prediction Model</div>
+		</div>
+		<div class="mySlides w3-animate-right">
+			<img src="winloss.jpg" alt="score" width="100%" height="500">
+			<div class="caption" style="color:yellow;">Win/loss prediction Model</div>
+		</div>
+	</div>
+	<br>
+	<div class="dots">
+		<span class="dot"></span>
+		<span class="dot"></span>
+		<span class="dot"></span>
+	</div>
+    
+ 	   
+ 	    <div class="image-left">
+ 		<img class="img1" src="score_image.jpg" alt="score" width="500" height="300"></div>
+ 		<div class="text-right">
+ 			<h2 style="color:black;font-family:arial;font-size:26px;"><u>Score Prediction Model</u></h2>
+ 			<p style="color:black;font-family:arial;font-size:17px;">Learn how to construct a machine learning model  using random forest algorithm and linear regression algorithm to predict scores of a cricket match</p>
+ 			<br>
+ 			<button class="btn" type="button"><a href="final-project-score.html">Learn More</button>
+ 		</div>
+ 		<div class="image-right">
+ 			<img class="img1" src="winloss.jpg" alt="players" width="500" height="300">
+ 		</div>
+ 		<div class="text-left">
+ 			<h2 style="color:black;font-family:arial;font-size:26px;"><u>Win/loss Chances  Prediction Model</u></h2>
+ 			<p style="color:black;font-family:arial;font-size:17px;">Learn how to construct a machine learning model  using logistic regression algorithm to predict chances of winning by a team in a cricket match</p>
+ 			<br>
+ 			<button class="btn" type="button"><a href="final-project-winloss.html">Learn More</button>
+ 		</div>
+ 		 <div class="image-left1">
+ 		<img class="img1" src="players.jpg" alt="score" width="500" height="300"></div>
+ 		<div class="text-right1">
+ 			<h2 style="color:black;font-family:arial;font-size:26px;"><u>Match prediction Model</u></h2>
+ 			<p style="color:black;font-family:arial;font-size:17px;">Learn how to construct a machine learning model  using Decision Tree algorithm to predict if a match will be played or not</p>
+ 			<br>
+ 			<button class="btn" type="button"><a href="final-project-ratings.html">Learn More</button>
+ 		</div>
+
+ 		<script>
+ 			function closeNav(){
+ 				document.getElementById("menu").style.width="0";
+ 			}
+ 			function openNav(){
+ 				document.getElementById("menu").style.width="100%";
+ 				document.getElementById("menu").style.height="100%";
+ 			}
+     	var SlideIndex=0;
+     	showSlides();
+     	function showSlides(){
+     		var i;
+     		var slides=document.getElementsByClassName("mySlides");
+     		var dots=document.getElementsByClassName("dot");
+     		for(i=0;i<slides.length;i++){
+     			slides[i].style.display="none";
+     		}
+     		SlideIndex++;
+     		if(SlideIndex>slides.length){
+     			SlideIndex=1;
+     		}
+     		for(i=0;i<dots.length;i++){
+     			dots[i].className=dots[i].className.replace(" active","");
+     		}
+     		slides[SlideIndex-1].style.display="block";
+     		dots[SlideIndex-1].className+=" active";
+     		setTimeout(showSlides,2000);
+     	}
+ 		</script>
+ </body>
+ </html>

@@ -1,0 +1,62 @@
+   <head>
+        <style>
+            .format{
+                position:absolute;
+                top:20%;        
+                left:35%;
+                font-size:30px;
+                font-weight: bold;
+          }
+          .s1{
+            position: absolute;
+            left:30%;
+            margin-top:10px;
+            font-size:30px;
+            cursor:pointer;
+            border-radius: 5%;
+            transition: transform 0.4s;
+          }
+          .s1:hover{
+            background-color:red;
+            transform: scale(1.1);
+          }
+          h1{
+            position: absolute;
+            left:40%;
+            font-size:40px;
+            color:purple;
+          }
+          body{
+            background-image: url('static/score_image.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+          }
+          input{
+            border-style:solid;
+            border-color:black;
+          }
+    
+        </style>
+    </head>
+            <body>
+            
+                <form method="post" action=".">
+                    <h1><u>Score Prediction</u></h1>
+                    <div class="format">
+                    <label for="runs">Enter the runs</label>
+                    <input type="text" name="runs"/><br><br>
+                    <label for="wickets">Enter the Wickets:</label>
+                    <input name="wickets" type="text"/><br><br>
+                    <label for="overs">Enter the overs:</label>
+                    <input name="overs" type="text"/><br><br>
+                    <label for="striker">Enter the striker runs:</label>
+                    <input name="striker" type="text" /><br><br>
+                    <label for="non-striker">Enter the non-striker runs:</label>
+                    <input name="non_striker" type="text"/>
+                    <p><input type="submit" value="Predict the score" class="s1" /></p>
+                </div>
+                </form>
+            </body>
+        </html>
